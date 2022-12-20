@@ -94,3 +94,37 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+local M = {}
+
+local live_grep_in_glob = function(glob_pattern)
+  vim.ui.input({ prompt = "Ignore: ", completion = "file", default = "node_modules/, dist/, package%-lock.json, .git/, " }, function (ignore_patterns)
+    local ignore_patterns_table = {}
+
+    if ignore_patterns then
+      for str in string.gmatch(ignore_patterns, "([^,%s?]+)") do
+        table.insert(ignore_patterns_table, str)
+      end
+    end
+
+    require('telescope.builtin').live_grep({
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--glob=" .. (glob_pattern or ""),
+      },
+      file_ignore_patterns = ignore_patterns_table
+    })
+  end)
+end
+
+M.live_grep_in_glob = function ()
+  vim.ui.input({ prompt = "Glob: ", completion = "file", default = "**/*" }, live_grep_in_glob)
+end
+
+return M

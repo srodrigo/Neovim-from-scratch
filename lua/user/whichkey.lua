@@ -89,12 +89,16 @@ local mappings = {
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  ["o"] = {
+    --"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({previewer = true, layout_strategy = 'flex'})<cr>",
+    "<cmd>lua require('telescope.builtin').find_files({layout_strategy='flex'})<cr>",
     "Find files",
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  --["f"] = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "Find Text" },
+  ["f"] = { "<cmd>Telescope live_grep layout_strategy=flex<cr>", "Find Text" },
+  ["F"] = { "<cmd>lua require('user.telescope').live_grep_in_glob()<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["m"] = { "<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview" },
 
   p = {
     name = "Packer",
@@ -158,15 +162,18 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    -- o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
+    o = { "<cmd>AerialToggle!<cr>", "Symbols Outline" },
   },
+
   s = {
     name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    --b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
+    --R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
