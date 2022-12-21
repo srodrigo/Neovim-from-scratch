@@ -90,7 +90,7 @@ return packer.startup(function(use)
 	}
 
 	-- Outline
-	use { "stevearc/aerial.nvim", commit = "6a3ed24c5631da7a5d418bced57c16b32af7747c" }
+	use { "stevearc/aerial.nvim", commit = "086e1904e51fc559673598afbc59842db7981501" }
 
   -- Markdown
   use {
@@ -114,6 +114,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+  use { 'sindrets/diffview.nvim', commit = "aeca09694168f4800add10f2d031b372aa5c693d" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
