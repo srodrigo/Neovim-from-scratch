@@ -34,10 +34,20 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<A-l>", ":bnext<CR>", opts)
 keymap("n", "<A-h>", ":bprevious<CR>", opts)
+keymap("n", "<A-j>", "<C-^>", opts)
+keymap("n", "<A-k>", "<C-^>", opts)
 
--- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- Navigate tabs
+keymap("n", "<leader>1", "1gt", opts)
+keymap("n", "<leader>2", "2gt", opts)
+keymap("n", "<leader>3", "3gt", opts)
+keymap("n", "<leader>4", "4gt", opts)
+keymap("n", "<leader>5", "5gt", opts)
+keymap("n", "<leader>6", "6gt", opts)
+keymap("n", "<leader>7", "7gt", opts)
+keymap("n", "<leader>8", "8gt", opts)
+keymap("n", "<leader>9", "9gt", opts)
+keymap("n", "<leader>0", ":tablast<CR>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode 
