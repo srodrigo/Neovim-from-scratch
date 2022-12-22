@@ -86,7 +86,7 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
+	--["q"] = { "<cmd>q!<CR>", "Quit" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["o"] = {
@@ -129,7 +129,8 @@ local mappings = {
 		d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 		D = { "<cmd>DiffviewOpen<cr>", "Diffview Open" },
 		C = { "<cmd>DiffviewClose<cr>", "Diffview Close" },
-		H = { "<cmd>DiffviewFileHistory<cr>", "Diffview File History" },
+		h = { "<cmd>DiffviewFileHistory %<cr>", "Diffview File History" },
+		H = { "<cmd>DiffviewFileHistory<cr>", "Diffview All Files History" },
 	},
 
 	l = {
