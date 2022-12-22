@@ -116,6 +116,7 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" })
 	use({ "sindrets/diffview.nvim", commit = "aeca09694168f4800add10f2d031b372aa5c693d" })
+	use({ "tpope/vim-fugitive", commit = "5b0b138483de17a8fd8dfcec0b491782c8fbf102" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
