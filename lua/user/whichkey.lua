@@ -151,23 +151,28 @@ local mappings = {
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>Mason<cr>", "Installer Info (Mason)" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+			"<cmd>lua vim.diagnostic.goto_next()<cr>",
 			"Next Diagnostic",
 		},
 		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"<cmd>lua vim.diagnostic.goto_prev()<cr>",
 			"Prev Diagnostic",
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
 		-- o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
 		o = { "<cmd>AerialToggle!<cr>", "Symbols Outline" },
+	},
+	r = {
+		name = "Rust Tools",
+		r = { "<cmd>lua require('rust-tools.hover_actions').hover_actions()<cr>", "Code Action" },
+		d = { "<cmd>RustOpenExternalDocs<cr>", "Open External Docs" },
 	},
 
 	s = {
