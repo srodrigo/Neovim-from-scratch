@@ -63,8 +63,6 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
 	keymap(bufnr, "n", "gN", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 	keymap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-	keymap(bufnr, "n", "gj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-	keymap(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
 	keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 end
 
