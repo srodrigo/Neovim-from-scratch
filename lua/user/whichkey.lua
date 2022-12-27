@@ -170,6 +170,7 @@ local mappings = {
 		-- o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
 		o = { "<cmd>AerialToggle!<cr>", "Symbols Outline" },
 	},
+
 	r = {
 		name = "Rust Tools",
 		r = { "<cmd>lua require('rust-tools.hover_actions').hover_actions()<cr>", "Code Action" },
