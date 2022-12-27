@@ -119,6 +119,21 @@ return packer.startup(function(use)
 	use({ "sindrets/diffview.nvim", commit = "aeca09694168f4800add10f2d031b372aa5c693d" })
 	use({ "tpope/vim-fugitive", commit = "5b0b138483de17a8fd8dfcec0b491782c8fbf102" })
 
+	-- Testing
+	use({
+		"nvim-neotest/neotest",
+		commit = "de2f68fb13a05c361e0c096e167f7f79712f3a5c",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/neotest-vim-test",
+			"antoinemadec/FixCursorHold.nvim",
+			"haydenmeade/neotest-jest",
+			"rouge8/neotest-rust",
+		},
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

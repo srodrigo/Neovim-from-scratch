@@ -189,6 +189,20 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 
+	n = {
+		name = "Neotest",
+		a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
+		f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
+		F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
+		l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
+		L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
+		n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
+		N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
+		o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
+		S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+	},
+
 	t = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
