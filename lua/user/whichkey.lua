@@ -139,6 +139,7 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		A = { "<cmd>FixAll<cr>", "Fix All" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
 			"Document Diagnostics",
@@ -167,8 +168,9 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
-		-- o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
-		o = { "<cmd>AerialToggle!<cr>", "Symbols Outline" },
+		o = { "<cmd>OrganizeImports<cr>", "Organize Imports" },
+		-- O = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" },
+		O = { "<cmd>AerialToggle!<cr>", "Symbols Outline" },
 	},
 
 	r = {
