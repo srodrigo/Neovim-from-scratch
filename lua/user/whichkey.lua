@@ -69,16 +69,7 @@ local setup = {
 	},
 }
 
-local opts = {
-	mode = "n", -- NORMAL mode
-	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-	silent = true, -- use `silent` when creating keymaps
-	noremap = true, -- use `noremap` when creating keymaps
-	nowait = true, -- use `nowait` when creating keymaps
-}
-
-local mappings = {
+local normal_mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -203,6 +194,30 @@ local mappings = {
 		s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
 	},
 
+	d = {
+		name = "Debug",
+		R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
+		E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
+		C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
+		U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
+		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+		e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
+		g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+		h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
+		S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
+		i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+		o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+		p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
+		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+		s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+		x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+		u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+	},
+
 	t = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
@@ -215,5 +230,27 @@ local mappings = {
 	},
 }
 
+local visual_mappings = {
+	name = "Debug",
+	e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
+}
+
 which_key.setup(setup)
-which_key.register(mappings, opts)
+
+which_key.register(normal_mappings, {
+	mode = "n", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+})
+
+which_key.register(visual_mappings, {
+	mode = "v", -- VISUAL mode
+	prefix = "<leader>",
+	buffer = nil,
+	silent = true,
+	noremap = true,
+	nowait = false,
+})
