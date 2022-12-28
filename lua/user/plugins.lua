@@ -104,6 +104,9 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- HTML Autotag
+	use({ "windwp/nvim-ts-autotag", commit = "fdefe46c6807441460f11f11a167a2baf8e4534b" })
+
 	-- Surround
 	use({
 		"tpope/vim-surround",
