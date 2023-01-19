@@ -74,7 +74,7 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }) -- a bunch of snippets to use
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig", commit = "a63d2c75c6880d45209baff596939343e8a431fd" }) -- enable LSP
+	use({ "neovim/nvim-lspconfig", commit = "d228bcf7cd94611929482a09e114a42c41fe81a8" }) -- enable LSP
 	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" }) -- simple to use language server installer
 	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
