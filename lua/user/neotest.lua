@@ -7,7 +7,6 @@ neotest.setup({
 	adapters = {
 		require("neotest-jest")({
 			jestCommand = "npm test --",
-			jestConfigFile = "custom.jest.config.ts",
 			env = { CI = true },
 			cwd = function(path)
 				return vim.fn.getcwd()
@@ -19,4 +18,32 @@ neotest.setup({
 			-- ignore_file_types = { "python", "vim", "lua" },
 		}),
 	},
+})
+
+neotest_run_on_save = true
+
+vim.cmd([[
+  augroup neotest
+    autocmd!
+    autocmd BufWritePost  '<cmd><cr>'
+  augroup end
+]])
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = "neotest",
+	pattern = {
+		"*.spec.js",
+		"*.test.js",
+		"*.spec.jsx",
+		"*.test.jsx",
+		"*.spec.ts",
+		"*.test.ts",
+		"*.spec.tsx",
+		"*.test.tsx",
+	},
+	callback = function()
+		if neotest_run_on_save then
+			require("neotest").run.run(vim.fn.expand("%"))
+		end
+	end,
 })
