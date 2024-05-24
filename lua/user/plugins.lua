@@ -47,7 +47,7 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" })
 	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" })
 	use({ "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
-	use({ "akinsho/bufferline.nvim", commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" })
+	use({ "akinsho/bufferline.nvim", commit = "99337f63f0a3c3ab9519f3d1da7618ca4f91cffe", requires = 'nvim-tree/nvim-web-devicons' })
 	use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" })
 	use({ "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" })
 	use({ "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" })
@@ -75,20 +75,20 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig", commit = "d228bcf7cd94611929482a09e114a42c41fe81a8" }) -- enable LSP
-	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" }) -- simple to use language server installer
-	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
+	use({ "williamboman/mason.nvim", commit = "49ff59aded1047a773670651cfa40e76e63c6377" }) -- simple to use language server installer
+	use({ "williamboman/mason-lspconfig.nvim", commit = "a4caa0d083aab56f6cd5acf2d42331b74614a585" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 	use({ "ckipp01/stylua-nvim", run = "cargo install stylua", commit = "ce59a353f02938cba3e0285e662fcd3901cd270f" })
 	use({ "simrat39/rust-tools.nvim", commit = "99fd1238c6068d0637df30b6cee9a264334015e9" })
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
+	use({ "nvim-telescope/telescope.nvim", commit = "5665d93988acfbb0747bdbf4f4cb583bcebc8930" })
 
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+		commit = "6d56c5f404d3b116bab167bc03993cfb0a83f8aa",
 	})
 
 	-- Outline
@@ -124,8 +124,8 @@ return packer.startup(function(use)
 
 	-- Testing
 	use({
-		"nvim-neotest/neotest",
-		commit = "de2f68fb13a05c361e0c096e167f7f79712f3a5c",
+		"nvim-neotest/neotest-vim-test",
+		commit = "75c4228882ae4883b11bfce9b8383e637eb44192",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
